@@ -11,3 +11,7 @@ body {
     scroll-behavior: smooth;
     line-height: 1.6;    
 }
+
+.projects, .testimonial {
+    background: rgba(112, 111, 229, 0.06);
+}

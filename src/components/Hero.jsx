@@ -11,6 +11,22 @@ const Hero = () => {
             Products
           </span>
         </h1>
+
+        <p className='mt-6 mb-4 text-xl'>
+          Help find solutions with intitutive 
+          and in accordance with client business 
+          goals. we provide a high-quality services.
+        </p>
+
+        <div>
+            <button 
+                className="px-6 py-3 text-sm             
+                font-semibold rounded-full border 
+                border-purple-200 bg-primary text-white"
+            >
+                Get Started
+            </button>
+        </div>
       </div>
 
       <div className='flex-1'>

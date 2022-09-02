@@ -11,7 +11,12 @@ module.exports = {
       darker: '#1E1F4B',
       "white": '#ffffff'
     },
-    extend: {},
+    extend: {
+      spacing: {
+        '128': '31rem',
+        '144': '36rem',
+      },
+    },
   },
   plugins: [],
 }
