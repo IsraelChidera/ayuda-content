@@ -4,7 +4,7 @@ const Subscribe = () => {
   return (
     <section className='mt-20 text-center py-6'>
 
-        <div className="w-2/4 mx-auto">
+        <div className="w-3/4 md:w-2/4 mx-auto">
             <div className=''>
                 <p className='text-primary font-semibold  mb-2 uppercase'>
                     Subscribe

@@ -5,9 +5,9 @@ import workicon from '../assets/workicon.png';
 
 const Services = () => {
   return (
-    <section className='mt-8 px-32 services py-16'>
+    <section className='mt-8 px-14 lg:px-32 services py-16'>
         
-        <div className='w-96'>
+        <div className='w-auto md:w-96'>
             <p className='text-primary font-semibold  mb-2 uppercase'>
                 WHAT WE DO
             </p>
@@ -18,7 +18,7 @@ const Services = () => {
             </p>
         </div>
 
-        <section className='mt-20 grid grid-cols-3 gap-4'>
+        <section className='mt-20 md:grid grid-cols-3 gap-4'>
 
             <div>
                 <div className='mb-2'>
@@ -39,7 +39,7 @@ const Services = () => {
                 </p>
             </div>
 
-            <div>
+            <div className='md:my-0 my-14'>
                 <div className='mb-2'>
                     <img 
                         src={hearticon} 
@@ -93,7 +93,7 @@ const Services = () => {
                 </button>                              
             </div>
 
-            <section className='grid grid-cols-3 gap-4 mt-8'>
+            <section className='md:grid grid-cols-3 gap-4 mt-8'>
 
                 <div>
                     <div className=''>
@@ -113,7 +113,7 @@ const Services = () => {
                     </div>
                 </div>
 
-                <div>
+                <div className='md:my-0 my-14'>
                     <div className=''>
                         <i className="
                         text-primary p-4 fa-2x

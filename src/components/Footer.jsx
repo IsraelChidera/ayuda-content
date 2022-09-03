@@ -2,18 +2,18 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <section className='mt-10 bg-secondary text-white px-32 pt-10 pb-8'>
+    <section className='mt-10 bg-secondary text-white px-12 lg:px-32 pt-10 pb-4 md:pb-8'>
         <div>
 
             <div 
-                className='flex justify-between items-center 
+                className='text-center md:flex justify-between items-center 
                 pb-10 border-b border-b-slate-800'
             >
                 <p className='text-lg'>
                     <span className='italic font-bold text-primary'>Ayuda</span>content
                 </p>
 
-                <div>
+                <div className='md:my-0 my-6 md:block flex items-center justify-center'>
                     <ul className='flex items-center space-x-6'>
                         <li>
                             <a 

@@ -2,13 +2,13 @@ import React from 'react'
 
 const Navbar = () => {
   return (
-    <nav className='flex pt-6 justify-between px-32 items-center'>
+    <nav className='flex pt-6 justify-between px-4 lg:px-32 items-center'>
         <p className='text-lg'>
             <span className='italic font-bold text-primary'>Ayuda</span>content
         </p>
 
         <ul 
-            className='flex items-center space-x-10 text-darker'
+            className='hidden lg:flex items-center space-x-10 text-darker'
             style={{fontSize:'15px'}}    
         >
             <li>
