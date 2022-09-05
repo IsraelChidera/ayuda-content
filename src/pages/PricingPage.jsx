@@ -1,34 +1,14 @@
-import React, { useState } from 'react';
-import PaystackPop from '@paystack/inline-js';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const PricingPage = () => {
-    const [email, setEmail]= useState("");
-    const [amount, setAmount] = useState("");
-    const [firstname, setFirstname] = useState("");
-    const [lastname, setLastName] = useState("");
+     
 
-    const payWithPaystack = (e) => {
-        e.preventDefault();
-        const paystack = new PaystackPop();
-        paystack.newTransaction({
-            key:"pk_test_131cda27a7f3959aa195063b755e392acc385460",
-            amount:amount*100,
-            email,
-            firstname,
-            lastname,
-            onSuccess(transaction){
-                let message = `Payment Complete! Reference ${transaction.reference}`
-                alert(message);
-                setEmail("");
-                setAmount("");
-                setFirstname("");
-                setLastName("");
-            },
-            onCancel(){
-                alert("You have canceled the transaction")
-            }
-        })
+    const navigate = useNavigate();
+    const handleSubscribe = () => {
+        navigate("/plans-pricing/payment")
     }
+
   return (
     <section className='pt-20 px-8 lg:px-32 pb-20'>
         <div>
@@ -61,6 +41,7 @@ const PricingPage = () => {
                                 className="px-6 py-3 text-sm             
                                 font-semibold rounded-full border 
                                 border-purple-200 bg-primary text-white"
+                                onClick={handleSubscribe}
                             >
                                 Subscribe
                             </button>
@@ -86,6 +67,7 @@ const PricingPage = () => {
                                 className="px-6 py-3 text-sm             
                                 font-semibold rounded-full border 
                                 border-purple-200 bg-primary text-white"
+                                onClick={handleSubscribe}
                             >
                                 Subscribe
                             </button>
@@ -111,6 +93,7 @@ const PricingPage = () => {
                                 className="px-6 py-3 text-sm             
                                 font-semibold rounded-full border 
                                 border-purple-200 bg-primary text-white"
+                                onClick={handleSubscribe}
                             >
                                 Subscribe
                             </button>
@@ -136,6 +119,7 @@ const PricingPage = () => {
                                 className="px-6 py-3 text-sm             
                                 font-semibold rounded-full border 
                                 border-purple-200 bg-primary text-white"
+                                onClick={handleSubscribe}
                             >
                                 Subscribe
                             </button>
@@ -161,6 +145,7 @@ const PricingPage = () => {
                                 className="px-6 py-3 text-sm             
                                 font-semibold rounded-full border 
                                 border-purple-200 bg-primary text-white"
+                                onClick={handleSubscribe}
                             >
                                 Subscribe
                             </button>
@@ -186,6 +171,7 @@ const PricingPage = () => {
                                 className="px-6 py-3 text-sm             
                                 font-semibold rounded-full border 
                                 border-purple-200 bg-primary text-white"
+                                onClick={handleSubscribe}
                             >
                                 Subscribe
                             </button>
@@ -211,6 +197,7 @@ const PricingPage = () => {
                                 className="px-6 py-3 text-sm             
                                 font-semibold rounded-full border 
                                 border-purple-200 bg-primary text-white"
+                                onClick={handleSubscribe}
                             >
                                 Subscribe
                             </button>
@@ -236,6 +223,7 @@ const PricingPage = () => {
                                 className="px-6 py-3 text-sm             
                                 font-semibold rounded-full border 
                                 border-purple-200 bg-primary text-white"
+                                onClick={handleSubscribe}
                             >
                                 Subscribe
                             </button>
@@ -245,57 +233,7 @@ const PricingPage = () => {
             </div>
 
         </div>
-
-        <div className='mt-10 p-2  bg-darker'>
-            <form id="paymentForm">
-                <div className="form-group">
-                    <label for="email">Email Address</label>
-                    <input 
-                        type="email" 
-                        id="email-address" 
-                        value={email}
-                        onChange={(e)=>setEmail(e.target.value)}
-                        required 
-                    />
-                </div>
-                <div className="form-group">
-                    <label for="amount">Amount</label>
-                    <input 
-                        type="tel" 
-                        id="amount" 
-                        value={amount}
-                        onChange={(e)=>setAmount(e.target.value)}
-                        required 
-                    />
-                </div>
-                <div className="form-group">
-                    <label for="first-name">First Name</label>
-                    <input 
-                        type="text" 
-                        id="first-name" 
-                        value={firstname}
-                        onChange={(e)=>setFirstname(e.target.value)}
-                    />
-                </div>
-                <div className="form-group">
-                    <label for="last-name">Last Name</label>
-                    <input 
-                        type="text" 
-                        id="last-name" 
-                        value={lastname}
-                        onChange={(e)=>setLastName(e.target.value)}
-                    />
-                </div>
-                <div className="form-submit">
-                    <button 
-                        type="submit" 
-                        onClick={payWithPaystack}
-                    > 
-                        Pay
-                    </button>
-                </div>
-            </form>
-        </div>
+        
     </section>
   )
 }
