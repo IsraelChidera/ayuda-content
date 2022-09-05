@@ -1,10 +1,11 @@
 import React from 'react';
 import heroimage from '../assets/heroimage.png';
+import {Link} from 'react-router-dom';
 
 const Hero = () => {
   return (
     <section       
-      className='pt-20 px-14 lg:px-32 lg:grid grid-cols-2 gap-10'
+      className='pt-20 px-8 lg:px-32 lg:grid grid-cols-2 gap-10'
     >
       <div className='flex justify-center items-center lg:mb-0 mb-6'>
         <div>
@@ -22,13 +23,15 @@ const Hero = () => {
           </p>
 
           <div>
-              <button 
-                  className="px-6 py-3 text-sm             
-                  font-semibold rounded-full border 
-                  border-purple-200 bg-primary text-white"
-              >
+              <Link to="/plans-pricing">
+                <button 
+                    className="px-6 py-3 text-sm             
+                    font-semibold rounded-full border 
+                    border-purple-200 bg-primary text-white"
+                >
                   Get Started
-              </button>
+                </button>
+              </Link>              
           </div>
         </div>
       </div>

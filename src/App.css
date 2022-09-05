@@ -15,3 +15,10 @@ body {
 .projects, .testimonial {
     background: rgba(112, 111, 229, 0.06);
 }
+
+.pricelist {
+    background: #FFFFFF;
+    border: 1px solid #DBDBDB;
+    box-shadow: 0px 4px 5px 1px rgba(193, 193, 193, 0.35);
+    border-radius: 4px;
+}

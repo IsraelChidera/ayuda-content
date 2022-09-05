@@ -5,7 +5,7 @@ import timelineicon from '../assets/timelineicon.png';
 
 const Projects = () => {
   return (
-    <section className='my-10 px-14 lg:px-32 projects p-20'>
+    <section className='my-10 px-8 lg:px-32 projects p-20'>
         <div className='block md:grid grid-cols-3 gap-4'>
 
             <div className='flex justify-center items-center text-center'>
