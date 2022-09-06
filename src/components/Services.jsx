@@ -3,12 +3,21 @@ import activityicon from '../assets/activityicon.png';
 import hearticon from '../assets/hearticon.png';
 import workicon from '../assets/workicon.png';
 import {Link} from 'react-router-dom';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Services = () => {
+
+    AOS.init();
+    
   return (
     <section className='mt-8 px-8 lg:px-32 services py-16'>
         
-        <div className='w-auto md:w-96'>
+        <div 
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            className='w-auto md:w-96'
+        >
             <p className='text-primary font-semibold  mb-2 uppercase'>
                 WHAT WE DO
             </p>
@@ -19,7 +28,11 @@ const Services = () => {
             </p>
         </div>
 
-        <section className='mt-20 md:grid grid-cols-3 gap-4'>
+        <section 
+            data-aos="fade-up"
+            data-aos-duration="3000"
+            className='mt-20 md:grid grid-cols-3 gap-4'
+        >
 
             <div>
                 <div className='mb-2'>
@@ -80,8 +93,14 @@ const Services = () => {
 
         </section>
 
-        <section className='mt-24'>
-            <div className='flex justify-between items-center text-sm'>
+        <section             
+            className='mt-24'
+        >
+            <div 
+                data-aos="fade-up"
+                data-aos-duration="1000"
+                className='flex justify-between items-center text-sm'
+            >
                 <p className='text-darker text-xl font-semibold 
                 mb-2 uppercase'>
                     How it works
@@ -96,7 +115,11 @@ const Services = () => {
                 </Link>                                             
             </div>
 
-            <section className='md:grid grid-cols-3 gap-4 mt-8'>
+            <section 
+                data-aos="fade-up"
+                data-aos-duration="3000"
+                className='md:grid grid-cols-3 gap-4 mt-8'
+            >
 
                 <div>
                     <div className=''>

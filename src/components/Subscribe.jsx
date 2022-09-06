@@ -1,8 +1,17 @@
-import React from 'react'
+import React from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Subscribe = () => {
+
+    AOS.init();
+
   return (
-    <section className='mt-20 text-center py-6'>
+    <section 
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        className='mt-20 text-center py-6'
+    >
 
         <div className="px-8 md:px-0 md:w-2/4 mx-auto">
             <div className=''>

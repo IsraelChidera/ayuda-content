@@ -1,10 +1,19 @@
 import React from 'react';
 import dots from '../assets/dots.png';
 import dots2 from '../assets/dots.png';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Testimonials = () => {
+
+    AOS.init();
+    
   return (
-    <section className='mt-32 mb-4 relative testimonial py-10'>
+    <section 
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        className='mt-32 mb-4 relative testimonial py-10'
+    >
         <div>
             <img 
                 src={dots} 

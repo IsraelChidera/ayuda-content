@@ -1,8 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const PricingPage = () => {
      
+    AOS.init();
 
     const navigate = useNavigate();
     const handleSubscribe = () => {
@@ -11,7 +14,10 @@ const PricingPage = () => {
 
   return (
     <section className='pt-20 px-8 lg:px-32 pb-20'>
-        <div>
+        <div
+            data-aos="fade-up"
+            // data-aos-duration="1000"
+        >
             <h1 className='text-4xl'>
                 Plans {"&"} Pricing
             </h1>
@@ -23,7 +29,11 @@ const PricingPage = () => {
             </p>
         </div>
 
-        <div className='mt-10 md:space-y-0 space-y-10 md:grid grid-cols-4 gap-6'>
+        <div 
+            data-aos="fade-up"
+            data-aos-duration="2000"
+            className='mt-10 md:space-y-0 space-y-10 md:grid grid-cols-4 gap-6'
+        >
             <div className='pricelist flex justify-center items-center'>
                 <div className='p-6 text-center'>
                     <h2 className='text-2xl font-extrabold'>
