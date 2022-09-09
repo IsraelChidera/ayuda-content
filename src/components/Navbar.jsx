@@ -18,7 +18,7 @@ const Navbar = () => {
 
         <div 
             // className='hidden'
-            className={`lg:flex justify-center items-center lg:mx-64  ${openMobileMenu? "": "lg:block hidden"}`}
+            className={`lg:flex justify-center items-center ${openMobileMenu? "": "lg:block hidden"}`}
         >
             <ul 
                 className=' lg:flex items-center space-x-10 text-darker'
@@ -51,7 +51,9 @@ const Navbar = () => {
                 </li>
             </ul>
 
-            <div>
+            <div 
+                className="md:pl-24 lg:pl-48"
+            >
                 <Link to="/plans-pricing">
                     <button 
                         className="px-6 py-3 text-sm             
