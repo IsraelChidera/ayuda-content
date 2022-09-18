@@ -7,7 +7,7 @@ const Hero = () => {
     <section       
       className='pt-20 px-8 lg:px-32 lg:grid grid-cols-2 gap-10'
     >
-      <div className='flex justify-center items-center lg:mb-0 mb-6'>
+      <div className='herocontent flex justify-center items-center lg:mb-0 mb-6'>
         <div>
           <h1 className='leadig text-darker font-bold text-4xl md:text-6xl'>
             We Design Impactful Digital
@@ -36,7 +36,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className='xl:flex-1'>
+      <div className='heroimage xl:flex-1'>
         <img src={heroimage} alt="hero image" className='h-auto'/>
       </div>
     </section>
