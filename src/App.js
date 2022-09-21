@@ -13,7 +13,7 @@ function App() {
   useEffect(()=>{
     setTimeout(() => {      
       setLoader(true);
-    }, 8000)
+    }, 4000)
   }, [])
 
   return (
@@ -35,16 +35,22 @@ function App() {
         )
         :
         (
-          <div>            
-            < Navbar />
+          <div className='relative'>            
+            <div className='bg-white fixed top-0 left-0 w-full z-10'>
+              < Navbar />
+            </div>
 
-            <Routes>
-              <Route exact path="/" element={<LandingPage/>}/>
-              <Route path="/plans-pricing" element={<PricingPage/>}/>
-              <Route path="/plans-pricing/payment" element={<Checkout/>}/>
-            </Routes>
+            <div className="mt-16">
+              <Routes>
+                <Route exact path="/" element={<LandingPage/>}/>
+                <Route path="/plans-pricing" element={<PricingPage/>}/>
+                <Route path="/plans-pricing/payment" element={<Checkout/>}/>
+              </Routes>
+            </div>
 
-            < Footer />
+            <div>
+              < Footer />
+            </div>
           </div>
         )
       }

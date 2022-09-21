@@ -7,12 +7,31 @@ import Testimonials from '../components/Testimonials';
 
 const LandingPage = () => {
   return (
-    <section className="relative">      
-      < Hero />
-      < Projects />
-      < Services />
-      < Testimonials />
-      < Subscribe />
+    <section className="relative">
+      <div>
+        < Hero />
+      </div>      
+
+      <div>
+        < Projects />
+      </div> 
+
+      <div>
+        < Services />
+      </div> 
+
+      <div>
+        < Testimonials />
+      </div> 
+
+      <div>
+        < Subscribe />
+      </div> 
+      
+      
+      
+      
+      
       
     </section>
   )

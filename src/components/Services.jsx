@@ -11,12 +11,15 @@ const Services = () => {
     AOS.init();
     
   return (
-    <section className='mt-8 px-8 lg:px-32 services py-16'>
+    <section 
+        className='mt-8 px-8 lg:px-32 services py-16' 
+        id="services"
+    >
         
         <div 
             data-aos="fade-up"
             data-aos-duration="1000"
-            className='w-auto md:w-96'
+            className='w-auto md:w-96'            
         >
             <p className='text-primary font-semibold  mb-2 uppercase'>
                 WHAT WE DO
@@ -94,7 +97,7 @@ const Services = () => {
         </section>
 
         <section             
-            className='mt-24'
+            className='mt-24'            
         >
             <div 
                 data-aos="fade-up"
@@ -106,7 +109,7 @@ const Services = () => {
                     How it works
                 </p>  
 
-                <Link to="/plans-pricing">
+                <Link to="plans-pricing">
                     <button className='underline decoration-solid hover:no-underline'>
                         See pricing <span>
                         <i class="fa-solid fa-arrow-right"></i>    

@@ -4,7 +4,8 @@ import {Link} from 'react-router-dom';
 
 const Hero = () => {
   return (
-    <section       
+    <section  
+      id="home"
       className='pt-20 px-8 lg:px-32 lg:grid grid-cols-2 gap-10'
     >
       <div className='herocontent flex justify-center items-center lg:mb-0 mb-6'>

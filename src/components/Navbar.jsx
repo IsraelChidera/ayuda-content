@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import bars from '../assets/bars.png';
 import cancel from '../assets/cancel.png';
-
+import { HashLink } from 'react-router-hash-link';
 const Navbar = () => {
 
     const [openMobileMenu, setOpenMobileMenu] = useState(false);
@@ -24,25 +24,21 @@ const Navbar = () => {
             <ul 
                 className=' lg:flex items-center space-x-10 text-darker'
                 style={{fontSize:'15px'}}    
-            >
-                <Link to="/">
-                    <li>
-                        <span>
-                            Home
-                        </span>
-                    </li>
-                </Link>
+            >                
+                <HashLink smooth to="/#home">
+                    Home
+                </HashLink>
 
-                <li>
-                    <a href="#">
+                <li className="cursor-pointer">                    
+                    <HashLink smooth to="/#services">
                         Services
-                    </a>
+                    </HashLink>
                 </li>
 
-                <li>
-                    <a href="#">
-                        Pricing
-                    </a>
+                <li className="cursor-pointer">                    
+                    <HashLink smooth to="/#testimonial">
+                        Testimonials
+                    </HashLink>
                 </li>
 
                 <li>
@@ -89,34 +85,39 @@ const Navbar = () => {
                             />            
                         </div>
 
-                        <Link to="/">
-                            <li>
-                                <span>
-                                    Home
-                                </span>
-                            </li>
-                        </Link>
+                        <HashLink 
+                            smooth to="/#home"
+                            onClick={()=>setOpenMobileMenu(false)}    
+                        >
+                            Home
+                        </HashLink>
 
-                        <li>
-                            <a href="#">
+                        <li 
+                            className="cursor-pointer"
+                            onClick={()=>setOpenMobileMenu(false)}  
+                        > 
+                            <HashLink smooth to="/#services">
                                 Services
-                            </a>
+                            </HashLink>
                         </li>
 
-                        <li>
-                            <a href="#">
-                                Pricing
-                            </a>
+                        <li 
+                            className="cursor-pointer"
+                            onClick={()=>setOpenMobileMenu(false)}  
+                        > 
+                            <HashLink smooth to="/#testimonial">
+                                Testimonials
+                            </HashLink>
                         </li>
 
-                        <li>
+                        <li onClick={()=>setOpenMobileMenu(false)}>
                             <a href="#">
                                 Blog
                             </a>
                         </li>
 
                         <div 
-                            className=""
+                            onClick={()=>setOpenMobileMenu(false)}
                         >
                             <Link to="/plans-pricing">
                                 <button 
