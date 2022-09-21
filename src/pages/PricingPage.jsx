@@ -13,7 +13,7 @@ const PricingPage = () => {
     }
 
   return (
-    <section className='pt-20 px-8 lg:px-32 pb-20'>
+    <section id="#plans-pricing" className='pt-20 px-8 lg:px-32 pb-20'>
         <div
             data-aos="fade-up"
             // data-aos-duration="1000"

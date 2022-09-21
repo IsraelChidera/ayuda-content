@@ -75,13 +75,13 @@ const Navbar = () => {
                         style={{fontSize:'42px'}}    
                     >
                         <div 
-                            className='cursor-pointer mb-6 flex justify-center items-center'
-                            onClick={()=>setOpenMobileMenu(false)}   
+                            className='cursor-pointer mb-6 flex justify-center items-center'                             
                         >
                             <img
                                 src={cancel}
                                 alt="cancel icon"
                                 className='text-center'
+                                onClick={()=>setOpenMobileMenu(false)}  
                             />            
                         </div>
 
@@ -93,33 +93,42 @@ const Navbar = () => {
                         </HashLink>
 
                         <li 
-                            className="cursor-pointer"
-                            onClick={()=>setOpenMobileMenu(false)}  
+                            className="cursor-pointer"                            
                         > 
-                            <HashLink smooth to="/#services">
+                            <HashLink 
+                                smooth to="/#services"
+                                onClick={()=>setOpenMobileMenu(false)}      
+                            >
                                 Services
                             </HashLink>
                         </li>
 
                         <li 
-                            className="cursor-pointer"
-                            onClick={()=>setOpenMobileMenu(false)}  
+                            className="cursor-pointer"                         
                         > 
-                            <HashLink smooth to="/#testimonial">
+                            <HashLink 
+                                smooth to="/#testimonial"
+                                onClick={()=>setOpenMobileMenu(false)}     
+                            >
                                 Testimonials
                             </HashLink>
                         </li>
 
-                        <li onClick={()=>setOpenMobileMenu(false)}>
-                            <a href="#">
+                        <li>
+                            <a 
+                                href="#"
+                                onClick={()=>setOpenMobileMenu(false)}    
+                            >
                                 Blog
                             </a>
                         </li>
 
-                        <div 
-                            onClick={()=>setOpenMobileMenu(false)}
+                        <div                             
                         >
-                            <Link to="/plans-pricing">
+                            <Link 
+                                to="/#plans-pricing"
+                                onClick={()=>setOpenMobileMenu(false)}    
+                            >
                                 <button 
                                     className="px-20 py-3 text-lg             
                                     font-semibold rounded-full border 
