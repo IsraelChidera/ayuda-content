@@ -27,12 +27,7 @@ const LandingPage = () => {
       <div>
         < Subscribe />
       </div> 
-      
-      
-      
-      
-      
-      
+           
     </section>
   )
 }
