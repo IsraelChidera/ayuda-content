@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 import Checkout from './pages/Checkout';
 import LandingPage from './pages/LandingPage';
 import PricingPage from './pages/PricingPage';
+import Admin from './pages/Admin';
 import './index.css';
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
               <Routes>
                 <Route exact path="/" element={<LandingPage/>}/>
                 <Route path="/plans-pricing" element={<PricingPage/>}/>
+                <Route path="/admin" element={<Admin/>}/>
                 <Route path="/plans-pricing/payment" element={<Checkout/>}/>
               </Routes>
             </div>
