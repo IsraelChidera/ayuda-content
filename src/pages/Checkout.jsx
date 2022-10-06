@@ -32,7 +32,7 @@ const Checkout = () => {
     }
 
     return (
-        <section className='pt-20 px-8 lg:px-32 pb-20'>
+        <section className='pt-20 px-8 lg:px-64 pb-20'>
 
             <div>
                 <h1 className='text-4xl md:text-center'>

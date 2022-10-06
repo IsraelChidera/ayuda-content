@@ -13,7 +13,12 @@ body {
 }
 
 .projects, .testimonial {
-    background: rgba(112, 111, 229, 0.06);
+  background: rgba(112, 111, 229, 0.06);
+}
+
+.admin {
+  /* background: rgb(189, 189, 189); */
+  background: #F2F4F7;
 }
 
 .pricelist {
@@ -41,17 +46,5 @@ body {
     }
   }
   
-  /* @keyframes slideInRight {
-    0% {
-      transform: translateX(100%);
-    }
-    100% {
-      transform: translateX(0);
-    }
-  }
-  
-  .heroimage {
-    animation: 4s ease-out 0s 1 slideInRight;
-  } */
 
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import bars from '../assets/bars.png';
 import cancel from '../assets/cancel.png';
 import { HashLink } from 'react-router-hash-link';
@@ -42,9 +42,9 @@ const Navbar = () => {
                 </li>
 
                 <li>
-                    <a href="#">
+                    <Link to="/blog">
                         Blog
-                    </a>
+                    </Link>
                 </li>
             </ul>            
         </div>

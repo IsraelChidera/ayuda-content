@@ -8,6 +8,8 @@ import LandingPage from './pages/LandingPage';
 import PricingPage from './pages/PricingPage';
 import Admin from './pages/Admin';
 import './index.css';
+import Blog from './pages/Blog';
+import Posting from './pages/Posting';
 
 function App() {
   const [loader, setLoader] = useState(false);
@@ -46,6 +48,8 @@ function App() {
                 <Route exact path="/" element={<LandingPage/>}/>
                 <Route path="/plans-pricing" element={<PricingPage/>}/>
                 <Route path="/admin" element={<Admin/>}/>
+                <Route path="/blog" element={<Blog/>}/>
+                <Route path="/posting" element={<Posting/>}/>
                 <Route path="/plans-pricing/payment" element={<Checkout/>}/>
               </Routes>
             </div>
