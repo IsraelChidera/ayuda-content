@@ -29,12 +29,12 @@ const Admin = () => {
     return(
         <>
             <Layout>
-                <section className=" w-1/2 mx-auto px-4 lg:px-10  pb-8 mt-40 mb-40 admin rounded-md">
+                <section className=" lg:w-1/2 mx-6 lg:mx-auto px-4 lg:px-10  pb-8 mt-40 mb-40 admin rounded-md">
                     <h1 className="text-xl font-bold pt-10 border-b-1 border-black pb-2">
                         Log in
                     </h1>
 
-                    <div className="col-span-3 sm:col-span-2">                    
+                    <div className="col-span-3 sm:col-span-2 lg:text-base text-sm">                    
 
                         <div className="mt-1 flex rounded-md shadow-sm ">
                             <span className="bg-secondary text-white inline-flex items-center py-2 rounded-l-md border border-r-0 border-primary bg-gray-50 px-3 text-sm text-gray-500">

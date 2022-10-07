@@ -42,18 +42,18 @@ const Posting = () => {
 
     return (
         <>  
-            <nav className='flex pt-6 justify-around lg:justify-between px-4 lg:px-32 items-center'>
-                <p className='text-lg'>
+            <nav className='flex pt-6 justify-between lg:justify-between px-4 lg:px-32 items-center'>
+                <p className='lg:text-lg text-sm'>
                     <Link to="#">
                         <span className='italic font-bold text-primary'>Ayuda</span>content
                     </Link>            
                 </p>        
 
                 <div 
-                    className="lg:block hidden"
+                    className="lg:block "
                 >                    
                     <button 
-                        className="px-6 py-3 text-sm             
+                        className="lg:px-6 px-4 py-1 lg:py-3 text-sm             
                         font-semibold rounded-full border 
                         border-purple-200 bg-primary text-white"
                         onClick={onLogout}
@@ -63,12 +63,12 @@ const Posting = () => {
                 </div>                        
             </nav>  
 
-            <section className="mx-auto mt-20 mb-20 w-1/2">
+            <section className="lg:mx-auto mx-6 mt-20 mb-20 lg:w-1/2">
                 <h1 className="font-bold mb-4 text-xl">
                     Add Blog
                 </h1>
 
-                <form id="paymentForm" className='space-y-6'>
+                <form id="paymentForm" className='lg:text-base text-sm space-y-6'>
                     <div className="form-group">
                         <label>Title</label>
                         <input 

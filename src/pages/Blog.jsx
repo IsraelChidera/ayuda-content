@@ -9,7 +9,7 @@ const Blog = () => {
                 <Navbar/>
             </div>
 
-            <section>
+            <section className='text-center mt-6'>
                 Blog
             </section>
 

@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <section  
       id="home"
-      className='pt-20 px-8 lg:px-32 lg:grid grid-cols-2 gap-10'
+      className='pt-10 px-8 lg:px-32 lg:grid grid-cols-2 gap-10'
     >
       <div className='herocontent flex justify-center items-center lg:mb-0 mb-6'>
         <div>
@@ -38,7 +38,7 @@ const Hero = () => {
       </div>
 
       <div className='heroimage xl:flex-1'>
-        <img src={heroimage} className='h-auto'/>
+        <img src={heroimage} alt="picture of a girl holding a laptop" className='h-auto'/>
       </div>
     </section>
   )

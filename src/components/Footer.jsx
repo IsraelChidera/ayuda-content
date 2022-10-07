@@ -16,30 +16,30 @@ const Footer = () => {
                 <div className='md:my-0 my-6 md:block flex items-center justify-center'>
                     <ul className='flex items-center space-x-6'>
                         <li>
-                            <a 
+                            <span 
                                 
                                 className='rounded-full p-2 bg-primary'                                  
                             >
                                 <i className="fa-brands fa-instagram"></i>
-                            </a>
+                            </span>
                         </li>
 
                         <li>
-                            <a 
+                            <span 
                                 
                                 className='rounded-full p-2 bg-primary'      
                             >
                                 <i className="fa-brands fa-facebook"></i>
-                            </a>
+                            </span>
                         </li>
 
                         <li>
-                            <a 
+                            <span 
                                 
                                 className='rounded-full p-2 bg-primary'      
                             >
                                 <i className="fa-brands fa-twitter"></i>
-                            </a>
+                            </span>
                         </li>
                     </ul>
                 </div>
