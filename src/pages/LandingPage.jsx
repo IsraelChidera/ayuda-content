@@ -4,10 +4,13 @@ import Projects from '../components/Projects';
 import Services from '../components/Services';
 import Subscribe from '../components/Subscribe';
 import Testimonials from '../components/Testimonials';
+import Layout from '../components/Layout';
 
 const LandingPage = () => {
   return (
-    <section className="relative">
+
+    <Layout>
+      <section className="mt-16 relative">
       <div>
         < Hero />
       </div>      
@@ -29,6 +32,7 @@ const LandingPage = () => {
       </div> 
            
     </section>
+    </Layout>
   )
 }
 

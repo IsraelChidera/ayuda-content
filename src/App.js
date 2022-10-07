@@ -10,6 +10,7 @@ import Admin from './pages/Admin';
 import './index.css';
 import Blog from './pages/Blog';
 import Posting from './pages/Posting';
+import Layout from './components/Layout';
 
 function App() {
   const [loader, setLoader] = useState(false);
@@ -39,23 +40,24 @@ function App() {
         :
         (
           <div className='relative'>            
-            <div className='bg-white fixed top-0 left-0 w-full z-10'>
-              < Navbar />
-            </div>
+            
 
-            <div className="mt-16">
+            <div>
               <Routes>
                 <Route exact path="/" element={<LandingPage/>}/>
                 <Route path="/plans-pricing" element={<PricingPage/>}/>
                 <Route path="/admin" element={<Admin/>}/>
-                <Route path="/blog" element={<Blog/>}/>
-                <Route path="/posting" element={<Posting/>}/>
+                {/* <Route path="/blog" element={<Blog/>}/>
+                <Route path="/posting" element={<Posting/>}/> */}
                 <Route path="/plans-pricing/payment" element={<Checkout/>}/>
               </Routes>
             </div>
 
-            <div>
-              < Footer />
+            <div className="mt-0">
+              <Routes>
+                <Route path="/blog" element={<Blog/>}/>
+                <Route exact path="/posting" element={<Posting/>}/>
+              </Routes>
             </div>
           </div>
         )
