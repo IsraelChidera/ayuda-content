@@ -115,12 +115,12 @@ const Navbar = () => {
                         </li>
 
                         <li>
-                            <a 
-                                href="#"
+                            <Link 
+                                to="/blog"
                                 onClick={()=>setOpenMobileMenu(false)}    
                             >
                                 Blog
-                            </a>
+                            </Link>
                         </li>
 
                         <div                             

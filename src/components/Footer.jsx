@@ -17,7 +17,7 @@ const Footer = () => {
                     <ul className='flex items-center space-x-6'>
                         <li>
                             <a 
-                                href='#'
+                                
                                 className='rounded-full p-2 bg-primary'                                  
                             >
                                 <i className="fa-brands fa-instagram"></i>
@@ -26,7 +26,7 @@ const Footer = () => {
 
                         <li>
                             <a 
-                                href='#'
+                                
                                 className='rounded-full p-2 bg-primary'      
                             >
                                 <i className="fa-brands fa-facebook"></i>
@@ -35,7 +35,7 @@ const Footer = () => {
 
                         <li>
                             <a 
-                                href='#'
+                                
                                 className='rounded-full p-2 bg-primary'      
                             >
                                 <i className="fa-brands fa-twitter"></i>

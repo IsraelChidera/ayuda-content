@@ -1,8 +1,6 @@
 import {useState, useEffect} from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
-import Footer from './components/Footer';
-import Navbar from './components/Navbar';
 import Checkout from './pages/Checkout';
 import LandingPage from './pages/LandingPage';
 import PricingPage from './pages/PricingPage';
@@ -10,7 +8,6 @@ import Admin from './pages/Admin';
 import './index.css';
 import Blog from './pages/Blog';
 import Posting from './pages/Posting';
-import Layout from './components/Layout';
 
 function App() {
   const [loader, setLoader] = useState(false);

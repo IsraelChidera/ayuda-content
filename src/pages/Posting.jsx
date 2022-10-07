@@ -12,29 +12,21 @@ const Posting = () => {
     const [post, setPost] = useState("");
     const navigate = useNavigate();
 
-    const onBlogPost =  (e) =>{
+    const onBlogPost = async (e) =>{
         e.preventDefault();
-        const docRef =  addDoc(collection(db, "users"), {
-            Title: title,
-            Tag: tag,
-            Post: post,
-          //   publish: db.firestore.Timestamp.fromDate(new Date())
-          });
-          console.log("Document written with ID: ", docRef.id);
-          alert("Blog post added sucessfully")
-        // try {
-        //     const docRef = await addDoc(collection(db, "users"), {
-        //       Title: title,
-        //       Tag: tag,
-        //       Post: post,
-        //     //   publish: db.firestore.Timestamp.fromDate(new Date())
-        //     });
-        //     console.log("Document written with ID: ", docRef.id);
-        //     alert("Blog post added sucessfully")
-        //   } catch (e) {
-        //     console.error("Error adding document: ", e);
-        //     alert("Unable to post to blog. Try again!")
-        //   }
+        try {
+            const docRef = await addDoc(collection(db, "users"), {
+              Title: title,
+              Tag: tag,
+              Post: post,
+            //   publish: db.firestore.Timestamp.fromDate(new Date())
+            });
+            console.log("Document written with ID: ", docRef.id);
+            alert("Blog post added sucessfully")
+          } catch (e) {
+            console.error("Error adding document: ", e);
+            alert("Unable to post to blog. Try again!")
+          }
     }
 
     const onLogout = () => {

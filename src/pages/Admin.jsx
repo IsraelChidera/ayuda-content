@@ -19,8 +19,7 @@ const Admin = () => {
                 console.log(user)
                 // ...
             })
-            .catch((error) => {
-                const errorCode = error.code;
+            .catch((error) => {                
                 const errorMessage = error.message;
                 console.log("1", errorMessage)
                 alert("Error logging in, please try again")

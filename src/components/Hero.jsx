@@ -38,7 +38,7 @@ const Hero = () => {
       </div>
 
       <div className='heroimage xl:flex-1'>
-        <img src={heroimage} alt="hero image" className='h-auto'/>
+        <img src={heroimage} className='h-auto'/>
       </div>
     </section>
   )
