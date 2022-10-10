@@ -7,12 +7,12 @@ const AuthContext = createContext();
 
 export function AuthContextProvider({children}){
     const navigate = useNavigate();
+    const [loading, setLoading] = useState(false);
     const name = "Israel";
     const age = 26;
     const add = (b) => {
         return 4 + b;
-    }
-    const [loading, setLoading] = useState(false);
+    }    
 
     const signIn = async (email, password) => {
         setLoading(true);
@@ -29,8 +29,7 @@ export function AuthContextProvider({children}){
             const errorMessage = error.message;
             console.log("1", errorMessage)
             alert("Error logging in, please try again")
-            setLoading(false);
-            // npm i nth-check@1.0.2
+            setLoading(false);            
         });
     }
     
