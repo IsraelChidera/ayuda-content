@@ -33,6 +33,7 @@ export function AuthContextProvider({children}){
         });
     }
     // npm i nth-check@2.0.1
+    // npm i @svgr/webpack@6.2.1
 
     const value = {
         name,
