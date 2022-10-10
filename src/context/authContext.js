@@ -32,7 +32,7 @@ export function AuthContextProvider({children}){
             setLoading(false);            
         });
     }
-    
+    // npm i nth-check@2.0.1
 
     const value = {
         name,
