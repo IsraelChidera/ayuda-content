@@ -10,7 +10,7 @@ const Posting = () => {
     const [title, setTitle] = useState("");
     const [tag, setTag] = useState("");
     const [post, setPost] = useState("");
-    const navigate = useNavigate();
+    const navigate = useNavigate();    
 
     const onBlogPost = async (e) =>{
         e.preventDefault();

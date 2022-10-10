@@ -3,12 +3,16 @@ import {auth} from '../firebase';
 import { signInWithEmailAndPassword } from "firebase/auth";
 import {useNavigate} from 'react-router-dom';
 import Layout from '../components/Layout';
+import { useAuthContext } from '../context/authContext';
 
 const Admin = () => {
     const [email, setEmail]= useState("");
     const [password, setPassword]= useState("");
     const navigate = useNavigate();
+    const auths = useAuthContext();
 
+    console.log("auth: ", auth);
+    console.log("auth: ", auths);
     const onAdminLogin = () => {
         
         signInWithEmailAndPassword(auth, email, password)
