@@ -33,7 +33,8 @@ const Posting = () => {
         
         signOut(auth).then(() => {
         // Sign-out successful.
-        console.log("sign out successful")
+        console.log("sign out successful");
+        console.log(auth)
         navigate("/admin")
         }).catch((error) => {
         // An error happened.

@@ -1,33 +1,17 @@
 import React, {useState} from 'react';
-import {auth} from '../firebase';
-import { signInWithEmailAndPassword } from "firebase/auth";
-import {useNavigate} from 'react-router-dom';
 import Layout from '../components/Layout';
 import { useAuthContext } from '../context/authContext';
 
 const Admin = () => {
     const [email, setEmail]= useState("");
     const [password, setPassword]= useState("");
-    const navigate = useNavigate();
     const auths = useAuthContext();
 
-    console.log("auth: ", auth);
-    console.log("auth: ", auths);
+   
+    console.log("auths: ", auths);
+    console.log("add", auths.add(4))
     const onAdminLogin = () => {
-        
-        signInWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
-                // Signed in 
-                const user = userCredential.user;
-                navigate("/posting");
-                console.log(user)
-                // ...
-            })
-            .catch((error) => {                
-                const errorMessage = error.message;
-                console.log("1", errorMessage)
-                alert("Error logging in, please try again")
-            });
+        auths.signIn(email, password)       
     }
 
     return(
