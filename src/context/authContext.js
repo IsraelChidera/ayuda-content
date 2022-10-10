@@ -12,20 +12,25 @@ export function AuthContextProvider({children}){
     const add = (b) => {
         return 4 + b;
     }
+    const [loading, setLoading] = useState(false);
 
     const signIn = async (email, password) => {
+        setLoading(true);
         return  await signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             // Signed in 
             const user = userCredential.user;
             navigate("/posting");
             console.log(user)
+            setLoading(false);
             // ...
         })
         .catch((error) => {                
             const errorMessage = error.message;
             console.log("1", errorMessage)
             alert("Error logging in, please try again")
+            setLoading(false);
+            // npm i nth-check@1.0.2
         });
     }
     
@@ -34,7 +39,8 @@ export function AuthContextProvider({children}){
         name,
         age, 
         add,
-        signIn
+        signIn,
+        loading
     }
 
     return (
