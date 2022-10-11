@@ -9,7 +9,8 @@ const Admin = () => {
 
    
     console.log("auths: ", auths);
-    console.log("add", auths.add(4))
+    // console.log("add", auths.add(4))
+    console.log("user", auths.users);
     const onAdminLogin = () => {
         auths.signIn(email, password)       
     }

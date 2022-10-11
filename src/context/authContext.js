@@ -1,6 +1,7 @@
-import  { useState, useContext, createContext } from "react";
+import  { useState, useContext, createContext, useEffect } from "react";
 import {auth} from '../firebase';
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
+// import { getAuth, onAuthStateChanged } from "firebase/auth";
 import {useNavigate} from 'react-router-dom';
 
 const AuthContext = createContext();
@@ -8,6 +9,8 @@ const AuthContext = createContext();
 export function AuthContextProvider({children}){
     const navigate = useNavigate();
     const [loading, setLoading] = useState(false);
+    const [users, setUsers] = useState("");
+
     const name = "Israel";
     const age = 26;
     const add = (b) => {
@@ -20,10 +23,8 @@ export function AuthContextProvider({children}){
         .then((userCredential) => {
             // Signed in 
             const user = userCredential.user;
-            navigate("/posting");
-            console.log(user)
-            setLoading(false);
-            // ...
+            navigate("/posting");            
+            setLoading(false);            
         })
         .catch((error) => {                
             const errorMessage = error.message;
@@ -32,15 +33,59 @@ export function AuthContextProvider({children}){
             setLoading(false);            
         });
     }
+
+    useEffect(()=>{
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                // User is signed in, see docs for a list of available properties
+                // https://firebase.google.com/docs/reference/js/firebase.User
+                const uid = user.uid;
+                setUsers(uid)
+                console.log("logged in");
+                console.log("uid", users);
+                // ...
+            } else {
+                // User is signed out
+                
+                console.log("not logged in");
+                setUsers(user);          
+                console.log("uid", user);
+                console.log("users: ", users);
+            }
+        });
+    
+    }, [users])
+
+    
+    // const user = () => {
+    //     return onAuthStateChanged(auth, (user) => {
+    //         if (user) {
+    //             // User is signed in, see docs for a list of available properties
+    //             // https://firebase.google.com/docs/reference/js/firebase.User
+    //             const uid = user.uid;
+    //             console.log("logged in");
+    //             console.log("uid", uid);
+    //             // ...
+    //         } else {
+    //             // User is signed out
+    //             // ...
+    //             console.log("not logged in")
+    //             // const uid = user.uid;                
+    //             console.log("uid", user);
+    //         }
+    //     });
+    // }
+
     // npm i nth-check@2.0.1
     // npm i @svgr/webpack@6.2.1
-
+    //https://www.youtube.com/watch?v=2FOKSKegtcU
     const value = {
         name,
         age, 
         add,
         signIn,
-        loading
+        loading,
+        users
     }
 
     return (

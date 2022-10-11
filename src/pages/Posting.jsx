@@ -5,12 +5,17 @@ import {Link} from 'react-router-dom';
 import {auth} from '../firebase';
 import { signOut } from "firebase/auth";
 import {useNavigate} from 'react-router-dom';
+import { useAuthContext } from '../context/authContext';
 
 const Posting = () => {
     const [title, setTitle] = useState("");
     const [tag, setTag] = useState("");
     const [post, setPost] = useState("");
     const navigate = useNavigate();    
+    const auths = useAuthContext();
+
+    // console.log("user", auths.user());
+    console.log("user", auths.users);
 
     const onBlogPost = async (e) =>{
         e.preventDefault();
