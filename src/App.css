@@ -46,5 +46,15 @@ body {
     }
   }
   
+.articles {
+  background: #e4ebf0;
+}
 
+.title {
+  color: #334;
+}
 
+.content {
+  color: #334;
+  font-size: 15px;
+}

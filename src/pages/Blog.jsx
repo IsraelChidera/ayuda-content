@@ -3,18 +3,20 @@ import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import { collection, getDocs } from "firebase/firestore";
 import {db} from '../firebase';
+import blogImage from '../assets/heroimage.png';
 
 const Blog = () => {
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); 
+    var yyyy = today.getFullYear();
+
+    today = mm + '/' + dd + '/' + yyyy;
     const [posts, setPosts] = useState([]);
     const [loading, setLoading] = useState(false);
 
     const fetchPost = async () => {
-        // const querySnapshot = await getDocs(collection(db, "users"));
-        // querySnapshot.forEach((doc) => {
-        //     console.log(doc.id, " => ", doc.data());
-        //     setPosts([doc.data()]);
-        //     console.log("pots", posts)
-        // });
+        
         setLoading(true);
         await getDocs(collection(db, "users"))
             .then((querySnapshot)=>{
@@ -27,7 +29,7 @@ const Blog = () => {
             })
        
     }
-    console.log(posts);
+    
     useEffect(()=>{
         fetchPost();
     }, [])
@@ -39,28 +41,59 @@ const Blog = () => {
                 <Navbar/>
             </div>
 
-            <section className='text-center mt-6'>
+            <section className='mx-auto w-4/5  mt-20'>
                 {
                     !loading?
                     posts?.map((post, id)=> (
                         
-                            <section key={id}>
-                                <h1>
-                                    {post.Title}
-                                </h1>
-                                <p>
+                        <section 
+                            key={id} 
+                            className="articles rounded-md mb-10 px-6 py-8 grid
+                            grid-cols-3 gap-4"
+                        >
+                            <div className="col-span-2">
+                                <p className="text-sm mb-12">
+                                    {today}
+                                </p>
+                                
+                                <div>
+                                    <h1 className="title text-4xl font-bold">
+                                        {post.Title}
+                                    </h1>
+
+                                    <p className="text-base mt-2 content">
+                                        {post.Post}
+                                    </p>
+                                </div>
+
+                                <p className="text-sm mt-16">
                                     {post.Tag}
                                 </p>
-                            </section>
+                            </div>
+
+                            <div>
+                                <img   
+                                    src={blogImage}
+                                    alt="blog article image"
+                                />
+                            </div>
+                        </section>
                         
                     ))
                     :
-                    "loading . . ."
+                    (
+                        <p className="font-bold text-center">
+                            Fetching blog articles . . .
+                        </p>
+                    )
                 }
-                Blog
+                
             </section>
 
-            <div className="w-full fixed bottom-0 left-0">
+            <div 
+                // className="w-full fixed left-0 bottom-0 "
+                className={`${loading ? "w-full fixed left-0 bottom-0" : "w-full mt-10"}`}
+            >
                 <Footer/>       
             </div>    
         </section>
