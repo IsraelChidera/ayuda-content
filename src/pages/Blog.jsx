@@ -26,6 +26,7 @@ const Blog = () => {
                     .map((doc) => ({...doc.data(), id:doc.id }));
                 setPosts(newData)   
                 setLoading(false); 
+                console.log(posts, newData);
             })
        
     }
@@ -43,6 +44,10 @@ const Blog = () => {
 
             <section className='mx-auto w-4/5  mt-20'>
                 {
+                    posts.length===0? (
+                        <p>No blog article has been posted</p>
+                    )
+                    :
                     !loading?
                     posts?.map((post, id)=> (
                         
@@ -54,6 +59,7 @@ const Blog = () => {
                             <div className="col-span-2">
                                 <p className="text-sm mb-12">
                                     {today}
+                                    {/* {post.createdAt} */}
                                 </p>
                                 
                                 <div>
@@ -73,7 +79,8 @@ const Blog = () => {
 
                             <div>
                                 <img   
-                                    src={blogImage}
+                                    // src={blogImage}
+                                    src={post.postimage}
                                     alt="blog article image"
                                 />
                             </div>
@@ -92,7 +99,7 @@ const Blog = () => {
 
             <div 
                 // className="w-full fixed left-0 bottom-0 "
-                className={`${loading ? "w-full fixed left-0 bottom-0" : "w-full mt-10"}`}
+                className={`${loading ? "w-full fixed left-0 bottom-0" : "w-full mt-20"}`}
             >
                 <Footer/>       
             </div>    

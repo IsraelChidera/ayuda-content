@@ -6,7 +6,7 @@ import {useNavigate} from 'react-router-dom';
 
 const AuthContext = createContext();
 
-export function AuthContextProvider({children}){
+export function AuthContextProvider({children}){ 
     const navigate = useNavigate();
     const [loading, setLoading] = useState(false);
     const [users, setUsers] = useState("");
@@ -55,30 +55,7 @@ export function AuthContextProvider({children}){
         });
     
     }, [users])
-
     
-    // const user = () => {
-    //     return onAuthStateChanged(auth, (user) => {
-    //         if (user) {
-    //             // User is signed in, see docs for a list of available properties
-    //             // https://firebase.google.com/docs/reference/js/firebase.User
-    //             const uid = user.uid;
-    //             console.log("logged in");
-    //             console.log("uid", uid);
-    //             // ...
-    //         } else {
-    //             // User is signed out
-    //             // ...
-    //             console.log("not logged in")
-    //             // const uid = user.uid;                
-    //             console.log("uid", user);
-    //         }
-    //     });
-    // }
-
-    // npm i nth-check@2.0.1
-    // npm i @svgr/webpack@6.2.1
-    //https://www.youtube.com/watch?v=2FOKSKegtcU
     const value = {
         name,
         age, 

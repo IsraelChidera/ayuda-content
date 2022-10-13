@@ -1,37 +1,111 @@
 import React, {useState}  from 'react';
-import { collection, addDoc } from "firebase/firestore"; 
+import { collection, addDoc, Timestamp } from "firebase/firestore"; 
 import {db} from '../firebase';
 import {Link} from 'react-router-dom';
 import {auth} from '../firebase';
+import {storage} from '../firebase';
 import { signOut } from "firebase/auth";
+import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import {useNavigate} from 'react-router-dom';
 import { useAuthContext } from '../context/authContext';
 
 const Posting = () => {
+    const [formData, setFormData] = useState({
+        title: "",
+        tag:"",
+        post:"",
+        postimage:"",
+        createdAt: Timestamp.now().toDate(),
+    })
+
+    
+
     const [title, setTitle] = useState("");
     const [tag, setTag] = useState("");
     const [post, setPost] = useState("");
+    // const [imageUpload ,setImageUpload] = useState([]);
+    const [progress, setProgress] = useState(0);
     const navigate = useNavigate();    
     const auths = useAuthContext();
+ 
+
+    const handleImageChange = (e) => {
+        setFormData({...formData, postimage:e.target.files[0] });        
+    }
+
+    const handleChange = (e) => {
+        e.preventDefault();
+        setFormData({...formData, [e.target.name]:e.target.value});
+    }
 
     // console.log("user", auths.user());
     console.log("user", auths.users);
 
     const onBlogPost = async (e) =>{
+        console.log(formData);
+        // console.log(imageUpload);
+
         e.preventDefault();
-        try {
-            const docRef = await addDoc(collection(db, "users"), {
-              Title: title,
-              Tag: tag,
-              Post: post,
-            //   publish: db.firestore.Timestamp.fromDate(new Date())
-            });
-            console.log("Document written with ID: ", docRef.id);
-            alert("Blog post added sucessfully")
-          } catch (e) {
-            console.error("Error adding document: ", e);
-            alert("Unable to post to blog. Try again!")
-          }
+
+        // try {
+        //     const docRef = await addDoc(collection(db, "users"), {
+        //       Title: formData.title,
+        //       Tag: formData.tag,
+        //       Post: formData.post,
+        //     //   publish: db.firestore.Timestamp.fromDate(new Date())
+        //     });
+        //     console.log("Document written with ID: ", docRef.id);
+        //     alert("Blog post added sucessfully")
+        // } catch (e) {
+        //     console.error("Error adding document: ", e);
+        //     alert("Unable to post to blog. Try again!")
+        // }
+
+        const storageRef = ref(
+            storage, 
+            `/images/${Date.now()}${formData.postimage.name}`
+        );
+
+        const uploadImage  = uploadBytesResumable(storageRef, formData.postimage);
+
+        uploadImage.on(
+            "state_changed", 
+            (snapshot)=>{
+                const progressPercent = Math.round(
+                    (snapshot.bytesTransferred /  snapshot.totalBytes) * 100
+                );
+                setProgress(progressPercent);
+            },
+            (err)=>{
+                console.log(err);
+            },
+            ()=>{
+                setFormData({
+                    title: "",
+                    tag:"",
+                    post:"",
+                    postimage:"",
+                });
+
+                getDownloadURL(uploadImage.snapshot.ref)
+                .then((url) => {
+                    const articleRef = collection(db, "users");
+                    addDoc(articleRef,{
+                        Title: formData.title,
+                        Tag: formData.tag,
+                        Post: formData.post,
+                        postimage: url,
+                        createdAt: Timestamp.now().toDate(),
+                    })
+                    .then(()=>{
+                        alert("successfully added")
+                    })
+                    .catch(err=>{
+                        alert("Error encountered")
+                    })
+                })
+            }
+        )
     }
 
     const onLogout = () => {
@@ -79,9 +153,10 @@ const Posting = () => {
                         <label>Title</label>
                         <input 
                             type="text" 
-                            id="title" 
-                            value={title}
-                            onChange={(e)=>setTitle(e.target.value)}
+                            name="title" 
+                            value={formData.title}
+                            // onChange={(e)=>setTitle(e.target.value)}
+                            onChange={handleChange}
                             required 
                             className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" 
                         />
@@ -89,21 +164,16 @@ const Posting = () => {
 
                     <div className="col-span-6 sm:col-span-3">
                         <label className="block text-sm font-medium text-gray-700">
-                            Tags
+                            Post Image
                         </label>
-                        <select
-                            id="tag"
-                            name="tag"                                                    
+                        {/* className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" */}
+                        <input
+                            type="file"
+                            onChange={handleImageChange}
+                            name="postimage"
+                            accept="image/*"
                             className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
-                        >
-                            <option>Tags</option>
-                            <option>Books</option>
-                            <option>English</option>
-                            <option>Technology</option>
-                            <option>SEO</option>
-                            <option>Science</option>
-                            <option>Religion</option>
-                        </select>
+                        />
                     </div>
 
                     <div>
@@ -111,32 +181,18 @@ const Posting = () => {
                             Body
                         </label>
                         <div className="mt-1">
-                        <textarea
-                            id="post"
+                        <textarea                            
                             name="post"
                             rows={10}
-                            value={post}
+                            value={formData.post}
                             className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                             placeholder="you@example.com"                            
-                            onChange={(e)=>setPost(e.target.value)}
+                            // onChange={(e)=>setPost(e.target.value)}
+                            onChange={handleChange}
                         />
                         </div>                        
-                    </div>
-
-                    {/* <div>
-                        <label class="block">
-                            <span class="sr-only">Choose profile photo</span>
-                            <input type="file" class="block w-full text-sm text-slate-500
-                            file:mr-4 file:py-2 file:px-4
-                            file:rounded-full file:border-0
-                            file:text-sm file:font-semibold
-                            file:bg-violet-50 file:text-violet-700
-                            hover:file:bg-violet-100
-                            "/>
-                        </label>
-                    </div> */}
+                    </div>                   
                 
-
                     <div className="form-group">
                         <label 
                             className="block text-sm font-medium text-gray-700"                           
@@ -144,10 +200,11 @@ const Posting = () => {
                             Tags
                         </label>
                         <input 
-                            type="type" 
-                            id="tag" 
-                            value={tag}
-                            onChange={(e)=>setTag(e.target.value)}
+                            type="text" 
+                            name="tag" 
+                            value={formData.tag}
+                            // onChange={(e)=>setTag(e.target.value)}
+                            onChange={handleChange}
                             required 
                             className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" 
                         />
