@@ -53,13 +53,13 @@ const Blog = () => {
                         
                         <section 
                             key={id} 
-                            className="articles rounded-md mb-10 px-6 py-8 grid
-                            grid-cols-3 gap-4"
+                            className="articles rounded-md mb-10 px-6 py-8 lg:grid
+                            grid-cols-3 gap-6"
                         >
-                            <div className="col-span-2">
+                            <div className="col-span-2 lg:mb-0 mb-6">
                                 <p className="text-sm mb-12">
-                                    {today}
-                                    {/* {post.createdAt} */}
+                                    {/* {today} */}
+                                    {post.createdAt.toDate().toDateString()}
                                 </p>
                                 
                                 <div>
@@ -72,12 +72,12 @@ const Blog = () => {
                                     </p>
                                 </div>
 
-                                <p className="text-sm mt-16">
+                                <p className="text-sm mt-16 lg:block hidden">
                                     {post.Tag}
                                 </p>
                             </div>
 
-                            <div>
+                            <div className="flex rounded justify-center items-center">
                                 <img   
                                     // src={blogImage}
                                     src={post.postimage}

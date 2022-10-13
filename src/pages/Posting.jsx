@@ -20,9 +20,7 @@ const Posting = () => {
 
     
 
-    const [title, setTitle] = useState("");
-    const [tag, setTag] = useState("");
-    const [post, setPost] = useState("");
+    const [loading, setLoading] = useState(false);
     // const [imageUpload ,setImageUpload] = useState([]);
     const [progress, setProgress] = useState(0);
     const navigate = useNavigate();    
@@ -43,7 +41,7 @@ const Posting = () => {
 
     const onBlogPost = async (e) =>{
         console.log(formData);
-        // console.log(imageUpload);
+        setLoading(true);
 
         e.preventDefault();
 
@@ -74,7 +72,7 @@ const Posting = () => {
                 const progressPercent = Math.round(
                     (snapshot.bytesTransferred /  snapshot.totalBytes) * 100
                 );
-                setProgress(progressPercent);
+                setProgress(progressPercent)
             },
             (err)=>{
                 console.log(err);
@@ -98,10 +96,12 @@ const Posting = () => {
                         createdAt: Timestamp.now().toDate(),
                     })
                     .then(()=>{
-                        alert("successfully added")
+                        setLoading(false);
+                        alert("blog post successfully added");
+                        setProgress(0);
                     })
                     .catch(err=>{
-                        alert("Error encountered")
+                        alert("Error adding post");
                     })
                 })
             }
@@ -174,6 +174,19 @@ const Posting = () => {
                             accept="image/*"
                             className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                         />
+                       
+                        <p className="text-sm pb-4">
+                            {progress === 0 ? null : (
+                                <div className="progress">
+                                    <div
+                                        className="bg-primary h-10 p-2 border border-primary mt-2"
+                                        style={{ width: `${progress}%` }}
+                                    >
+                                        {`uploading image ${progress}%`}
+                                    </div>
+                                </div>
+                            )}
+                        </p>
                     </div>
 
                     <div>
@@ -186,8 +199,7 @@ const Posting = () => {
                             rows={10}
                             value={formData.post}
                             className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-                            placeholder="you@example.com"                            
-                            // onChange={(e)=>setPost(e.target.value)}
+                            placeholder="Add content"                                                        
                             onChange={handleChange}
                         />
                         </div>                        
@@ -218,7 +230,7 @@ const Posting = () => {
                                 font-semibold rounded-full border 
                                 border-purple-200 bg-primary text-white"
                         > 
-                            Post
+                            {loading? "Posting blog post...": "Post"}
                         </button>
                     </div>
                 </form>
