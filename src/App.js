@@ -10,6 +10,7 @@ import Blog from './pages/Blog';
 import Posting from './pages/Posting';
 import {AuthContextProvider} from './context/authContext';
 import ProtectedRoute from './components/ProtectedRoute';
+
 function App() {
   const [loader, setLoader] = useState(false);
   useEffect(()=>{
@@ -26,7 +27,7 @@ function App() {
             !loader?
             (
               
-                <div id="load" className="text-8xl  space-x-4">
+                <div id="load" className="text-8xl space-x-4">
                   <div>.</div>
                   <div>.</div>
                   <div>A</div>
@@ -60,14 +61,7 @@ function App() {
                     <Route path="*" element={<p>There's nothing here: 404!</p>} />
                   </Routes>
                 </div>
-
-                {/* <ProtectedRoute/> */}
-                {/* <div className="mt-0">
-                  <Routes>
-                    <Route path="/blog" element={<Blog/>}/>
-                    <Route exact path="/posting" element={<Posting/>}/>
-                  </Routes>
-                </div> */}
+                
               </div>
             )
           }

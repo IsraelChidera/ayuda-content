@@ -1,4 +1,5 @@
 import React from 'react';
+import logo from '../assets/logo.png';
 
 const Footer = () => {
   return (
@@ -9,8 +10,8 @@ const Footer = () => {
                 className='text-center md:flex justify-between items-center 
                 pb-10 border-b border-b-slate-800'
             >
-                <p className='text-lg'>
-                    <span className='italic font-bold text-primary'>Ayuda</span>content
+                <p className='text-lg md:block mb-10 md:mb-0 flex items-center justify-center'>
+                    <img src={logo} alt="ayuda logo" className="rounded-full bg-white w-32 h-32"/>
                 </p>
 
                 <div className='md:my-0 my-6 md:block flex items-center justify-center'>

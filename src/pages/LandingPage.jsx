@@ -10,7 +10,7 @@ const LandingPage = () => {
   return (
 
     <Layout>
-      <section className="mt-16 relative">
+      <section className="mt-24 relative">
       <div>
         < Hero />
       </div>      

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import bars from '../assets/bars.png';
 import cancel from '../assets/cancel.png';
+import logo from '../assets/logo.png';
 import { HashLink } from 'react-router-hash-link';
 const Navbar = () => {
 
@@ -11,10 +12,10 @@ const Navbar = () => {
     }
 
   return (
-    <nav className='flex pt-6 justify-around lg:justify-between px-4 lg:px-32 items-center'>
+    <nav className='flex justify-between lg:justify-between px-6 lg:px-32 items-center'>
         <p className='text-lg'>
             <Link to="/">
-                <span className='italic font-bold text-primary'>Ayuda</span>content
+                <img src={logo} alt="ayuda logo" className="w-32 h-32"/>
             </Link>            
         </p>
 
@@ -72,17 +73,13 @@ const Navbar = () => {
                 >
                     <ul   
                         className='space-y-8 text-center'              
-                        style={{fontSize:'42px'}}    
+                        style={{fontSize:'36px'}}    
                     >
                         <div 
-                            className='cursor-pointer mb-6 flex justify-center items-center'                             
+                            className='cursor-pointer mb-16 flex justify-center items-center'                             
                         >
-                            <img
-                                src={cancel}
-                                alt="cancel icon"
-                                className='text-center'
-                                onClick={()=>setOpenMobileMenu(false)}  
-                            />            
+                            <i className="fa fa-times text-center h-3 w-3" 
+                            aria-hidden="true" onClick={()=>setOpenMobileMenu(false)}></i>                            
                         </div>
 
                         <HashLink 

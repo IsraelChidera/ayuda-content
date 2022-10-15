@@ -9,8 +9,8 @@ const Hero = () => {
       className='pt-10 px-8 lg:px-32 lg:grid grid-cols-2 gap-10'
     >
       <div className='herocontent flex justify-center items-center lg:mb-0 mb-6'>
-        <div>
-          <h1 className='leadig text-darker font-bold text-4xl md:text-6xl'>
+        <div className=" ">
+          <h1 className='text-center md:text-left text-darker font-bold text-4xl md:text-6xl'>
             We Design Impactful Digital
             <span className='text-primary'>
               Products
