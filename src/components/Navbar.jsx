@@ -43,6 +43,12 @@ const Navbar = () => {
                 </li>
 
                 <li>
+                    <Link to="/about">
+                        About
+                    </Link>
+                </li>
+
+                <li>
                     <Link to="/blog">
                         Blog
                     </Link>
@@ -109,6 +115,15 @@ const Navbar = () => {
                             >
                                 Testimonials
                             </HashLink>
+                        </li>
+
+                        <li>
+                            <Link 
+                                to="/about"
+                                onClick={()=>setOpenMobileMenu(false)}    
+                            >
+                                About
+                            </Link>
                         </li>
 
                         <li>

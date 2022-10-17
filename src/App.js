@@ -8,6 +8,7 @@ import Admin from './pages/Admin';
 import './index.css';
 import Blog from './pages/Blog';
 import BlogDetail from './pages/BlogDetail';
+import About from './pages/About';
 import Posting from './pages/Posting';
 import {AuthContextProvider} from './context/authContext';
 import ProtectedRoute from './components/ProtectedRoute';
@@ -50,6 +51,7 @@ function App() {
                     <Route path="/blog" element={<Blog/>}/>
                     <Route path="/blog/:id" element={<BlogDetail/> } />
                     <Route path="/admin" element={<Admin/>}/>
+                    <Route path="/about" element={ <About/> } />
                     <Route 
                       path="/posting" 
                       element={
