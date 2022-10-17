@@ -7,6 +7,7 @@ import PricingPage from './pages/PricingPage';
 import Admin from './pages/Admin';
 import './index.css';
 import Blog from './pages/Blog';
+import BlogDetail from './pages/BlogDetail';
 import Posting from './pages/Posting';
 import {AuthContextProvider} from './context/authContext';
 import ProtectedRoute from './components/ProtectedRoute';
@@ -47,6 +48,7 @@ function App() {
                     <Route exact path="/" element={<LandingPage/>}/>
                     <Route path="/plans-pricing" element={<PricingPage/>}/>                
                     <Route path="/blog" element={<Blog/>}/>
+                    <Route path="/blog/:id" element={<BlogDetail/> } />
                     <Route path="/admin" element={<Admin/>}/>
                     <Route 
                       path="/posting" 

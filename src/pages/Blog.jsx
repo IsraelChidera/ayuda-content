@@ -3,15 +3,10 @@ import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import { collection, getDocs } from "firebase/firestore";
 import {db} from '../firebase';
-import blogImage from '../assets/heroimage.png';
+import { NavLink } from 'react-router-dom';
 
 const Blog = () => {
-    var today = new Date();
-    var dd = String(today.getDate()).padStart(2, '0');
-    var mm = String(today.getMonth() + 1).padStart(2, '0'); 
-    var yyyy = today.getFullYear();
-
-    today = mm + '/' + dd + '/' + yyyy;
+    
     const [posts, setPosts] = useState([]);
     const [loading, setLoading] = useState(false);
 
@@ -21,10 +16,9 @@ const Blog = () => {
         await getDocs(collection(db, "users"))
             .then((querySnapshot)=>{
                
-
                 const newData = querySnapshot.docs
                     .map((doc) => ({...doc.data(), id:doc.id }));
-                setPosts(newData)   
+                setPosts(newData);
                 setLoading(false); 
                 console.log(posts, newData);
             })
@@ -42,7 +36,7 @@ const Blog = () => {
                 <Navbar/>
             </div>
 
-            <section className='mx-auto w-4/5  mt-20'>
+            <section className='mx-auto w-4/5 mb-20 mt-20'>
                 {
                     posts.length===0? (
                         <p>No blog article has been posted</p>
@@ -52,38 +46,41 @@ const Blog = () => {
                     posts?.map((post, id)=> (
                         
                         <section 
-                            key={id} 
-                            className="articles rounded-md mb-10 px-6 py-8 lg:grid
-                            grid-cols-3 gap-6"
+                            key={id}                            
                         >
-                            <div className="col-span-2 lg:mb-0 mb-6">
-                                <p className="text-sm mb-12">
-                                    {/* {today} */}
-                                    {post.createdAt.toDate().toDateString()}
-                                </p>
-                                
-                                <div>
-                                    <h1 className="title text-4xl font-bold">
-                                        {post.Title}
-                                    </h1>
+                            <NavLink to={`/blog/${post.id}`}>
+                                <div className="articles rounded-md mb-10 px-6 pt-8 mb-16 pb-16 lg:grid
+                                    grid-cols-3 gap-6"
+                                >
+                                    <div className="col-span-2 lg:mb-0 mb-6">
+                                        <p className="text-sm mb-12">                                            
+                                            {post.createdAt.toDate().toDateString()}
+                                        </p>
+                                        {/* createdAt.toDate().toDateString()} */}
+                                        <div>
+                                            <h1 className="title text-4xl font-bold">
+                                                {post.Title}
+                                            </h1>
 
-                                    <p className="text-base mt-2 content">
-                                        {post.Post}
-                                    </p>
+                                            <p className="text-base mt-2 content">
+                                                {post.Post}
+                                            </p>
+                                        </div>
+
+                                        <p className="text-sm mt-16 lg:block hidden">
+                                            {post.Tag}
+                                        </p>
+                                    </div>
+
+                                    <div className=" flex rounded justify-center items-center">
+                                        <img   
+                                            // src={blogImage}
+                                            src={post.postimage}
+                                            alt="blog article image"
+                                        />
+                                    </div>
                                 </div>
-
-                                <p className="text-sm mt-16 lg:block hidden">
-                                    {post.Tag}
-                                </p>
-                            </div>
-
-                            <div className="flex rounded justify-center items-center">
-                                <img   
-                                    // src={blogImage}
-                                    src={post.postimage}
-                                    alt="blog article image"
-                                />
-                            </div>
+                            </NavLink>
                         </section>
                         
                     ))
