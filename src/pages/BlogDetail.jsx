@@ -46,9 +46,17 @@ const BlogDetail= () => {
                     <img src={data.postimage} alt={data.Title} className="blogimage" />
                 </div>
 
-                <div className="post">
-                    {data.Post}
+                <div 
+                    dangerouslySetInnerHTML={{__html: data.Post}}
+                    className="post"
+                >
+                    {/* {post.Post} */}
+
                 </div>
+
+                {/* <div className="post">
+                    {data.Post}
+                </div> */}
             </section>
         </>
     )
