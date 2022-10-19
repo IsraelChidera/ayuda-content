@@ -39,7 +39,7 @@ const Blog = () => {
             <section className='mx-auto w-4/5 mb-20 mt-20'>
                 {
                     posts.length===0? (
-                        <p>No blog article has been posted</p>
+                        <p>Fetching blog post... Please wait</p>
                     )
                     :
                     !loading?
@@ -62,9 +62,13 @@ const Blog = () => {
                                                 {post.Title}
                                             </h1>
 
-                                            <p className="text-base mt-2 content">
-                                                {post.Post}
-                                            </p>
+                                            <div 
+                                                dangerouslySetInnerHTML={{__html: post.Post}}
+                                                className="text-base mt-2 content"
+                                            >
+                                                {/* {post.Post} */}
+
+                                            </div>
                                         </div>
 
                                         <p className="text-sm mt-16 lg:block hidden">
