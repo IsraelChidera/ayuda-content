@@ -23,10 +23,10 @@ const Hero = () => {
             goals. we provide a high-quality services.
           </p>
 
-          <div>
+          <div className=' md:block w-full md:w-auto '>
               <Link to="/plans-pricing">
                 <button 
-                    className="px-6 py-3 text-sm             
+                    className="px-6 py-3 w-full md:w-auto text-sm             
                     font-semibold rounded-full border 
                     border-purple-200 bg-primary text-white"
                 >
@@ -38,7 +38,11 @@ const Hero = () => {
       </div>
 
       <div className='heroimage xl:flex-1'>
-        <img src={heroimage} alt="picture of a girl holding a laptop" className='h-auto'/>
+        <img 
+          src={heroimage} 
+          alt="picture of a girl holding a laptop" 
+          className='h-auto'
+        />
       </div>
     </section>
   )
