@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import bars from '../assets/bars.png';
 import cancel from '../assets/cancel.png';
 import logo from '../assets/logo.png';
@@ -14,9 +14,9 @@ const Navbar = () => {
   return (
     <nav className='flex justify-between lg:justify-between px-6 lg:px-32 items-center'>
         <p className='text-lg'>
-            <Link to="/">
+            <NavLink to="/">
                 <img src={logo} alt="ayuda logo" className="w-32 h-32"/>
-            </Link>            
+            </NavLink>            
         </p>
 
         <div             
@@ -43,15 +43,15 @@ const Navbar = () => {
                 </li>
 
                 <li>
-                    <Link to="/about">
+                    <NavLink to="/about">
                         About
-                    </Link>
+                    </NavLink>
                 </li>
 
                 <li>
-                    <Link to="/blog">
+                    <NavLink to="/blog">
                         Blog
-                    </Link>
+                    </NavLink>
                 </li>
             </ul>            
         </div>
@@ -59,7 +59,7 @@ const Navbar = () => {
         <div 
             className="lg:block hidden"
         >
-            <Link to="/plans-pricing">
+            <NavLink to="/plans-pricing">
                 <button 
                     className="px-6 py-3 text-sm             
                     font-semibold rounded-full border 
@@ -67,7 +67,7 @@ const Navbar = () => {
                 >
                 Get Started
                 </button>
-            </Link> 
+            </NavLink> 
         </div>
 
         {
@@ -118,26 +118,26 @@ const Navbar = () => {
                         </li>
 
                         <li>
-                            <Link 
+                            <NavLink 
                                 to="/about"
                                 onClick={()=>setOpenMobileMenu(false)}    
                             >
                                 About
-                            </Link>
+                            </NavLink>
                         </li>
 
                         <li>
-                            <Link 
+                            <NavLink 
                                 to="/blog"
                                 onClick={()=>setOpenMobileMenu(false)}    
                             >
                                 Blog
-                            </Link>
+                            </NavLink>
                         </li>
 
                         <div                             
                         >
-                            <Link 
+                            <NavLink 
                                 to="/#plans-pricing"
                                 onClick={()=>setOpenMobileMenu(false)}    
                             >
@@ -148,7 +148,7 @@ const Navbar = () => {
                                 >
                                 Get Started
                                 </button>
-                            </Link> 
+                            </NavLink> 
                         </div>
                     </ul>
                 </div>
