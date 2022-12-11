@@ -11,17 +11,16 @@ const Hero = () => {
       <div className='herocontent flex justify-center items-center lg:mb-0 mb-6'>
         <div className=" ">
           <h1 className='text-center md:text-left text-darker font-bold text-4xl md:text-5xl'>
-            STOP THE SEARCH FOR GREAT CONTENT. {" "}
+            Word-By-Word, {" "}
             <span className='text-primary'>
-              AYUDA IS ALL YOU NEED. 
+              Phrase-By-Phrase
             </span>
           </h1>
 
           <p className='mt-6 mb-4 md:text-lg'>
-            We are here for anything that requires 
-            piecing together words to create a masterpiece. 
-            Ayuda Content Agency is the best choice and 
-            we’re ready to prove that to you! 
+            We curate quality and immaculate sellable 
+            content that will make a difference for you and 
+            your brand. You can count on us.
           </p>
 
           <div className=' md:block w-full md:w-auto '>

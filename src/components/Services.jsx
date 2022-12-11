@@ -26,8 +26,10 @@ const Services = () => {
             </p>
             
             <p className='font-bold text-xl'>
-                We provide the perfect solution to
-                your business growth
+                We are a team of passionate and talented writers 
+                and we bring you excellent solutions to your existing 
+                content structure. Ayuda is just the perfect upgrade 
+                that you need.
             </p>
         </div>
 
@@ -51,8 +53,9 @@ const Services = () => {
                 </h6>
 
                 <p className='text-sm'>
-                    We help identify the best ways
-                    to improve your business
+                    Our content will expand the scope of 
+                    your business with elegantly thought-out 
+                    writeups.
                 </p>
             </div>
 
@@ -70,8 +73,9 @@ const Services = () => {
                 </h6>
 
                 <p className='text-sm'>
-                    We help identify the best ways
-                    to improve your business
+                    We will help to retain your customers 
+                    by answering many of the questions they 
+                    may have about your brand and products.
                 </p>
             </div>
 
@@ -85,12 +89,13 @@ const Services = () => {
                 </div>
 
                 <h6 className='mb-2 font-semibold text-lg'>
-                    Improve Business Model
+                    Generate leads and make sales
                 </h6>
 
                 <p className='text-sm'>
-                    We help identify the best ways
-                    to improve your business
+                    We help to write on ideas that show 
+                    customers why they need your 
+                    products/services 
                 </p>
             </div>
 

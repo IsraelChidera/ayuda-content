@@ -57,22 +57,49 @@ const About = () => {
                 <div className="bg-white py-12">
                     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                         <div className="lg:text-center mb-8">
-                            <h2 className="text-lg font-semibold text-indigo-600 text-center md:text-left">
+                            <h2 className="text-lg font-semibold text-indigo-600 text-center">
                                 About us
                             </h2>
-                            <p className="mt-2 text-3xl text-center md:text-left font-bold leading-8 
+                            <p className="mt-2 text-3xl text-center font-bold leading-8 
                                 tracking-tight text-gray-900 sm:text-4xl"
                             >
                                 What Makes Ayuda So Special?
                             </p>
                             <p className="mt-4 text-lg text-gray-500 font-semibold text-center md:text-left">
-                                This agency has only the best-of-the-best seasoned
-                                writers. We want to ensure you always get top-notch
-                                content, so our writers also have to be top-notch. 
-                                Ayuda writers are highly skilled and ready to meet 
-                                all your content needs
+                                Ayuda translates to mean "help" and that is what we are here to do. Our agency 
+                                has undergone a 4-year facultative process underground before this final 
+                                upgrade as a public brand offering nothing short of quality to our many 
+                                clienteles. Our offers are now open to you regardless of your location 
+                                anywhere in the world.
                             </p>
 
+                            <p className="mt-4 text-lg text-gray-500 font-semibold text-center md:text-left">
+                                Our seasoned writers are well-trained and will be on hand to work in line 
+                                with your vision for your business through the content they curate. 
+                            </p>
+
+                            <p className="mt-4 text-lg text-gray-500 font-semibold text-center md:text-left">
+                                We have a specific writer for every niche and as a result, we have got your 
+                                back. So, there is no need for you to think far and wide beyond us to write 
+                                n certain topics. We understand the essence of versatility in this business 
+                                and prefer to cause you less stress by ensuring we can offer pretty much 
+                                everything you need without you being actively involved in the process 
+                            </p>
+
+                            <p className="mt-4 text-lg text-gray-500 font-semibold text-center md:text-left">
+                                The quality of our content speaks for itself. There is truly no 
+                                bounds to our team's proficiency and diction necessary to write 
+                                error-free and original content that will blow your mind. We have a 
+                                special unit of editors who would let nothing slide to see that the 
+                                content you need for your blogs, ebooks, and landing pages come out 
+                                perfectly.
+                            </p>
+
+                            <p className="mt-4 text-lg text-gray-500 font-semibold text-center md:text-left">
+                                We do not experiment with your work by giving tasks to novice writers who 
+                                lack the required experience. Each of our writers has at least 3-4 years 
+                                of writing experience under their belts.
+                            </p>
                             
                         </div>
 
