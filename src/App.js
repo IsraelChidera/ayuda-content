@@ -23,7 +23,7 @@ function App() {
 
   return (
     <>
-      <AuthContextProvider>
+      {/* <AuthContextProvider> */}
         <div className="App bg-white">
           {
             !loader?
@@ -47,12 +47,12 @@ function App() {
                 <div>
                   <Routes>
                     <Route exact path="/" element={<LandingPage/>}/>
-                    <Route path="/plans-pricing" element={<PricingPage/>}/>                
-                    <Route path="/blog" element={<Blog/>}/>
-                    <Route path="/blog/:id" element={<BlogDetail/> } />
-                    <Route path="/admin" element={<Admin/>}/>
+                    <Route exact path="/plans-pricing" element={<PricingPage/>}/>                
+                    {/* <Route path="/blog" element={<Blog/>}/>
+                    <Route path="/blog/:id" element={<BlogDetail/> } /> */}
+                    {/* <Route path="/admin" element={<Admin/>}/> */}
                     <Route path="/about" element={ <About/> } />
-                    <Route 
+                    {/* <Route 
                       path="/posting" 
                       element={
                         <ProtectedRoute>
@@ -60,8 +60,8 @@ function App() {
                         </ProtectedRoute>
                         
                       }
-                    />
-                    <Route path="/plans-pricing/payment" element={<Checkout/>}/>
+                    /> */}
+                    <Route path="/payment" element={<Checkout/>}/>
                     <Route path="*" element={<p>There's nothing here: 404!</p>} />
                   </Routes>
                 </div>
@@ -70,7 +70,7 @@ function App() {
             )
           }
         </div>
-      </AuthContextProvider>      
+      {/* </AuthContextProvider>       */}
     </>
   );
 }

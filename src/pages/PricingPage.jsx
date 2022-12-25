@@ -10,12 +10,12 @@ const PricingPage = () => {
 
     const navigate = useNavigate();
     const handleSubscribe = () => {
-        navigate("/plans-pricing/payment")
+        navigate("/payment")
     }
 
   return (
     <Layout>
-        <section id="#plans-pricing" className='lg:mt-20 lg:mb-32 mb-0 mt-0 pt-20 px-8 lg:px-32 pb-20'>
+        <section className='lg:mt-20 lg:mb-32 mb-0 mt-0 pt-20 px-8 lg:px-32 pb-20'>
             <div
                 data-aos="fade-up"
                 // data-aos-duration="1000"

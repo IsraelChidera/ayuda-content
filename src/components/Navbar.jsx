@@ -38,21 +38,21 @@ const Navbar = () => {
 
                 <li className="cursor-pointer">                    
                     <HashLink smooth to="/#testimonial">
-                        Testimonials
+                        Global Reviews
                     </HashLink>
                 </li>
 
                 <li>
-                    <NavLink to="about">
+                    <NavLink exact to="/about">
                         About
                     </NavLink>
                 </li>
 
-                <li>
+                {/* <li>
                     <NavLink to="/blog">
                         Blog
                     </NavLink>
-                </li>
+                </li> */}
             </ul>            
         </div>
 
@@ -65,7 +65,7 @@ const Navbar = () => {
                     font-semibold rounded-full border 
                     border-purple-200 bg-primary text-white"
                 >
-                Get Started
+                    Submit a topic
                 </button>
             </NavLink> 
         </div>
