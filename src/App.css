@@ -78,6 +78,11 @@ body {
   border-radius: 4px;
 }
 
+.about-logo {
+  width: 370px;
+  height: 358px;
+}
+
 @media only screen and (max-width: 768px){
   .post {
     padding: 0 0rem;
