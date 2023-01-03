@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { BoltIcon, ChatBubbleBottomCenterTextIcon, GlobeAltIcon, ScaleIcon } from '@heroicons/react/24/outline';
 import {Link} from 'react-router-dom';
+import Layout from '../components/Layout';
 
     const features = [
         {
@@ -49,9 +50,8 @@ import {Link} from 'react-router-dom';
 
 const About = () => {
     return (
-        <section className="relative">
-
-           <Navbar/>            
+        <Layout>
+            <section>        
 
             <section>
                 <div className="bg-white py-12">
@@ -149,11 +149,11 @@ const About = () => {
                         </div>
                     </div>
                 </div>
+            </section>            
+
             </section>
-
-            <Footer/>
-
-        </section>
+        </Layout>
+        
     )
 }
 

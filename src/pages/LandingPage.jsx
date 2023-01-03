@@ -5,34 +5,40 @@ import Services from '../components/Services';
 import Subscribe from '../components/Subscribe';
 import Testimonials from '../components/Testimonials';
 import Layout from '../components/Layout';
+import Navbar from '../components/Navbar';
 
 const LandingPage = () => {
   return (
+  <>
+    {/* <div>
+      < Navbar /> 
+    </div> */}
 
     <Layout>
-      <section className="mt-24 relative">
-      <div>
-        < Hero />
-      </div>      
+      <section className="relative">
+        <div>
+          < Hero />
+        </div>      
 
-      <div>
-        < Projects />
-      </div> 
+        <div>
+          < Projects />
+        </div> 
 
-      <div>
-        < Services />
-      </div> 
+        <div>
+          < Services />
+        </div> 
 
-      <div>
-        < Testimonials />
-      </div> 
+        <div>
+          < Testimonials />
+        </div> 
 
-      <div>
-        < Subscribe />
-      </div> 
-           
-    </section>
+        <div>
+          < Subscribe />
+        </div> 
+            
+      </section>
     </Layout>
+  </>
   )
 }
 

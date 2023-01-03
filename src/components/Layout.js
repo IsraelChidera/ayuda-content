@@ -6,10 +6,13 @@ const Layout = ({children}) => {
     return (
         <section>
             <div className='bg-white fixed top-0 left-0 w-full z-10'>
-              < Navbar />
+              < Navbar /> 
             </div>
+            {/* <div>
+              < Navbar /> 
+            </div> */}
 
-            <div>
+            <div className='mt-32'>
               {children}
             </div>
             

@@ -12,6 +12,7 @@ import About from './pages/About';
 import Posting from './pages/Posting';
 import {AuthContextProvider} from './context/authContext';
 import ProtectedRoute from './components/ProtectedRoute';
+import Navbar from './components/Navbar';
 
 function App() {
   const [loader, setLoader] = useState(false);
@@ -42,12 +43,17 @@ function App() {
             )
             :
             (
-              <div className='relative'>            
+              <div>            
                 
                 <div>
+
+                  {/* <div>
+                    < Navbar /> 
+                  </div> */}
+
                   <Routes>
                     <Route exact path="/" element={<LandingPage/>}/>
-                    <Route exact path="/plans-pricing" element={<PricingPage/>}/>                
+                    <Route path="/plans-pricing" element={<PricingPage/>}/>                
                     {/* <Route path="/blog" element={<Blog/>}/>
                     <Route path="/blog/:id" element={<BlogDetail/> } /> */}
                     {/* <Route path="/admin" element={<Admin/>}/> */}

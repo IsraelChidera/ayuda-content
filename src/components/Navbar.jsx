@@ -26,9 +26,9 @@ const Navbar = () => {
                 className=' lg:flex items-center space-x-10 text-darker'
                 style={{fontSize:'15px'}}    
             >                
-                <HashLink smooth to="/#home">
+                <NavLink to="/">
                     Home
-                </HashLink>
+                </NavLink>
 
                 <li className="cursor-pointer">                    
                     <HashLink smooth to="/#services">

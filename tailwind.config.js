@@ -9,6 +9,7 @@ module.exports = {
       secondary: '#010101',
       dark: '#03014C',
       darker: '#1E1F4B',
+      text: '#747474',
       "white": '#ffffff'
     },
     extend: {
